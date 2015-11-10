@@ -1,8 +1,11 @@
 package DESIGN.datafiles;
 
+import DESIGN.auth.and.engine.IActor;
+import DESIGN.auth.and.engine.IProperty;
+import DESIGN.auth.and.engine.ISelfTrigger;
 import javafx.scene.paint.Color;
 
-public class Spaceship implements Actor {
+public class Spaceship implements IActor {
 	private double myXCor, myYCor;
 	private double mySize;
 	private Color myColor;
@@ -19,5 +22,15 @@ public class Spaceship implements Actor {
 		myYCor = y;
 		mySize = size;
 		myColor = color;
+	}
+	@Override
+	public void addProperty(IProperty property) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void addSelfTrigger(ISelfTrigger trigger) {
+		// TODO Auto-generated method stub
+		
 	}
 }

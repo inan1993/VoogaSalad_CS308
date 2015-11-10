@@ -6,6 +6,8 @@ import java.io.IOException;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
+import DESIGN.auth.and.engine.IActor;
+
 /*
  * http://stackoverflow.com/questions/13063815/save-xml-file-with-xstream
  */
@@ -17,7 +19,7 @@ public abstract class XMLSaver {
 		mySerializer = new XStream(new DomDriver());
 	}
 	
-	public void save (Actor s) {
+	public void save (IActor s) {
 		String serializedActor = mySerializer.toXML(s);
         System.out.println(serializedActor);
 	}

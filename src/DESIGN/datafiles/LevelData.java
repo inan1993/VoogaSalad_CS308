@@ -3,11 +3,13 @@ package DESIGN.datafiles;
 import java.util.Arrays;
 import java.util.List;
 
+import DESIGN.auth.and.engine.ILevel;
+
 public class LevelData {
-	private List<LevelWriteObject> levels;
+	private List<ILevel> levels;
 	private int numberOfLevels;
 	
-	public LevelData (List<LevelWriteObject> levels) {
+	public LevelData (List<ILevel> levels) {
 		this.levels = levels;
 		updateNumberOfLevels();
 	}
@@ -16,11 +18,11 @@ public class LevelData {
 		numberOfLevels = levels.size();
 	}
 	
-	public void add (LevelWriteObject... levelList) {
+	public void add (ILevel... levelList) {
 		levels.addAll(Arrays.asList(levelList));
 	}
 	
-	public void remove (LevelWriteObject... levelList) {
+	public void remove (ILevel... levelList) {
 		levels.removeAll(Arrays.asList(levelList));
 	}
 }

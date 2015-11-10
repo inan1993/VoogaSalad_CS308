@@ -1,6 +1,7 @@
 package DESIGN.datafiles;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SaveMaster implements IFileManager{
 	private GameSaver gameSaver;
@@ -15,9 +16,9 @@ public class SaveMaster implements IFileManager{
 		GameSaver q = new GameSaver();
 		Spaceship s = new Spaceship();
 		System.out.println("saving");
-		LevelWriteObject level = new LevelWriteObject();
+		ILevel level = new ILevel();
 		level.addActor(s);
-		ArrayList<LevelWriteObject> levelList = new ArrayList<LevelWriteObject>();
+		List<ILevel> levelList = new ArrayList<ILevel>();
 		levelList.add(level);
 		GameData game = new GameData(new StateData(), new LevelData(levelList));
 		q.saveGame(game);
