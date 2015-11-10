@@ -2,7 +2,6 @@ package DESIGN.datafiles;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
 
 public class LevelData {
 	private List<Level> levels;

@@ -2,16 +2,22 @@ package DESIGN.datafiles;
 
 import javafx.scene.paint.Color;
 
-public class Spaceship implements Serializable {
-	private double xCor, yCor;
-	private double size;
-	private Color color;
+public class Spaceship implements Actor {
+	private double myXCor, myYCor;
+	private double mySize;
+	private Color myColor;
 	
 	public Spaceship () {
-		this.xCor = 35;
-		this.yCor = 25;
+		this.myXCor = 35;
+		this.myYCor = 25;
 		
-		this.size = 100;
-		this.color = Color.RED;
+		this.mySize = 100;
+		this.myColor = Color.RED;
+	}
+	public Spaceship (double x, double y, double size, Color color) {
+		myXCor = x;
+		myYCor = y;
+		mySize = size;
+		myColor = color;
 	}
 }

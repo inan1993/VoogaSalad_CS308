@@ -6,8 +6,8 @@ public class LevelSaver extends XMLSaver {
 		super();
 	}
 	
-	public void save (Serializable... sList) {
-		for (Serializable s : sList) {
+	public void save (Actor... sList) {
+		for (Actor s : sList) {
 			this.save(s);
 		}
 	}
