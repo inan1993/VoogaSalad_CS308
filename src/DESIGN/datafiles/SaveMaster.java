@@ -1,14 +1,19 @@
 package DESIGN.datafiles;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+
 public class SaveMaster implements IFileManager{
-	private GameSaver gameSaver;
-	private LevelSaver levelSaver;
+	private GameSaver myGameSaver;
+	private LevelSaver myLevelSaver;
 
 	public SaveMaster () {
-		this.gameSaver = new GameSaver();
-		this.levelSaver = new LevelSaver();
+		this.myGameSaver = new GameSaver();
+		this.myLevelSaver = new LevelSaver();
 	}
 
 	public static void main (String[] args) {
@@ -20,7 +25,7 @@ public class SaveMaster implements IFileManager{
 		ArrayList<Level> levelList = new ArrayList<Level>();
 		levelList.add(level);
 		GameData game = new GameData(new StateData(), new LevelData(levelList));
-		q.saveGame(game);
+		q.saveGame(game, "src/DESIGN/datafiles/game.xml");
 		
 //		q.save(s);
 	}
@@ -28,6 +33,7 @@ public class SaveMaster implements IFileManager{
 	@Override
 	public void saveGame(GameData game, String fileName) {
 		// TODO Auto-generated method stub
+//		myGameSaver.saveGame(game, fileName));
 	}
 
 	@Override

@@ -1,14 +1,20 @@
 package DESIGN.datafiles;
 
-public interface IFileManager {
-	public void saveGame(GameData game, String fileName);
-	public GameData loadGame(String fileName);
+/*
+ *  Interface for the file manager.
+ *  Used by the authoring environment to save/load entire games/levels.
+ *  Used by the game player to save/load progress midgame.
+ */
 
-	public void saveLevel(LevelData level, String fileName);
-	public LevelData loadLevel(String fileName);
+public interface IFileManager {
+	public void saveGame(GameData game, String fileName) throws GameFileException;
+	public GameData loadGame(String fileName) throws GameFileException;
+
+	public void saveLevel(LevelData level, String fileName) throws GameFileException;
+	public LevelData loadLevel(String fileName) throws GameFileException;
 	
-	public void saveState(StateData state, String fileName);
-	public StateData loadState(String fileName);
+	public void saveState(StateData state, String fileName) throws GameFileException;
+	public StateData loadState(String fileName) throws GameFileException;
 	
 	
 	
