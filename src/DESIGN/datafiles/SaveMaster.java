@@ -1,6 +1,6 @@
 package DESIGN.datafiles;
 
-public class SaveMaster {
+public class SaveMaster implements IFileManager{
 	private GameSaver gameSaver;
 	private LevelSaver levelSaver;
 	
@@ -20,4 +20,28 @@ public class SaveMaster {
     	
     	q.save(s);
     }
+
+	@Override
+	public void saveGame(GameData game, String fileName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public GameData loadGame(String fileName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveState(StateData state, String fileName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public StateData loadState(String fileName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
