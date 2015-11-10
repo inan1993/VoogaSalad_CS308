@@ -1,16 +1,10 @@
 package DESIGN.datafiles;
 
-import java.util.ArrayList;
-import java.util.List;
+public interface Level {
+	
+	public UpdateObject run();
+	public boolean initGraph();
+	public boolean addActor(Actor actor);
+	public boolean linkActors(TriggerEvent myEvent, Actor... actors);
 
-// for example only
-
-public class Level {
-	List<Actor> actors;
-	public Level() {
-		actors = new ArrayList<Actor>();
-	}
-	public void addActor(Actor actor) {
-		actors.add(actor);
-	}
 }

@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class LevelData {
-	private List<Level> levels;
+	private List<LevelWriteObject> levels;
 	private int numberOfLevels;
 	
-	public LevelData (List<Level> levels) {
+	public LevelData (List<LevelWriteObject> levels) {
 		this.levels = levels;
 		updateNumberOfLevels();
 	}
@@ -16,11 +16,11 @@ public class LevelData {
 		numberOfLevels = levels.size();
 	}
 	
-	public void add (Level... levelList) {
+	public void add (LevelWriteObject... levelList) {
 		levels.addAll(Arrays.asList(levelList));
 	}
 	
-	public void remove (Level... levelList) {
+	public void remove (LevelWriteObject... levelList) {
 		levels.removeAll(Arrays.asList(levelList));
 	}
 }
