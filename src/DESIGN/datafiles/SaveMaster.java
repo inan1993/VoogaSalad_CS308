@@ -9,9 +9,9 @@ public class SaveMaster {
 		this.levelSaver = new LevelSaver();
 	}
 	
-	public void saveAll (Game game, Level... myLevels) {
+	public void saveAll (Game game, Level... levels) {
 		gameSaver.save(game);
-		levelSaver.save(myLevels);
+		levelSaver.save(levels);
 	}
 	
     public static void main (String[] args) {
