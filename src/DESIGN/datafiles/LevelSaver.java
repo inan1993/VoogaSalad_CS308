@@ -1,6 +1,6 @@
 package DESIGN.datafiles;
 
-import DESIGN.auth.and.engine.IActor;
+import DESIGN.authoring.IActor;
 
 public class LevelSaver extends XMLSaver {
 	

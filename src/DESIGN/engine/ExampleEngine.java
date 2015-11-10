@@ -1,9 +1,9 @@
-package DESIGN.auth.and.engine;
+package DESIGN.engine;
 
 import java.util.List;
 
-import DESIGN.datafiles.GameState;
-import DESIGN.datafiles.ILevel;
+import DESIGN.authoring.ILevel;
+import DESIGN.datafiles.GameData;
 
 public class ExampleEngine implements IEngine{
 
@@ -20,15 +20,21 @@ public class ExampleEngine implements IEngine{
 	}
 
 	@Override
-	public GameState save() {
+	public GameData save() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean load(GameState state) {
+	public boolean load(GameData state) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void runGame() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

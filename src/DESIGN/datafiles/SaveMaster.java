@@ -1,12 +1,10 @@
 package DESIGN.datafiles;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
+import DESIGN.authoring.ILevel;
+import DESIGN.authoring.LevelOne;
 
 public class SaveMaster implements IFileManager{
 	private GameSaver myGameSaver;
@@ -21,7 +19,7 @@ public class SaveMaster implements IFileManager{
 		GameSaver q = new GameSaver();
 		Spaceship s = new Spaceship();
 		System.out.println("saving");
-		ILevel level = new ILevel();
+		ILevel level = new LevelOne();
 		level.addActor(s);
 		List<ILevel> levelList = new ArrayList<ILevel>();
 		levelList.add(level);

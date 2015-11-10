@@ -1,8 +1,8 @@
 package DESIGN.datafiles;
 
-import DESIGN.auth.and.engine.IActor;
-import DESIGN.auth.and.engine.IProperty;
-import DESIGN.auth.and.engine.ISelfTrigger;
+import DESIGN.authoring.IActor;
+import DESIGN.authoring.IProperty;
+import DESIGN.authoring.ISelfTrigger;
 import javafx.scene.paint.Color;
 
 public class Spaceship implements IActor {

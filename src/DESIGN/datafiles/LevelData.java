@@ -3,17 +3,17 @@ package DESIGN.datafiles;
 import java.util.Arrays;
 import java.util.List;
 
-import DESIGN.auth.and.engine.ILevel;
+import DESIGN.authoring.ILevel;
 
 public class LevelData {
 	private List<ILevel> levels;
 	private int numberOfLevels;
 	
-	public LevelData (List<ILevel> levels) {
-		this.levels = levels;
+	public LevelData(List<ILevel> arrayList) {
+		this.levels = arrayList;
 		updateNumberOfLevels();
 	}
-	
+
 	private void updateNumberOfLevels () {
 		numberOfLevels = levels.size();
 	}

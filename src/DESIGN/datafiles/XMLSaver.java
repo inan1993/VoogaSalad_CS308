@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import DESIGN.auth.and.engine.IActor;
+import DESIGN.authoring.IActor;
 
 /*
  * http://stackoverflow.com/questions/13063815/save-xml-file-with-xstream

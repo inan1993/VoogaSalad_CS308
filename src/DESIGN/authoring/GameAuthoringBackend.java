@@ -1,12 +1,17 @@
-package DESIGN.auth.and.engine;
+package DESIGN.authoring;
 
-import DESIGN.datafiles.ShootTrigger;
+import java.util.ArrayList;
+
+import DESIGN.datafiles.LevelData;
 import DESIGN.datafiles.Spaceship;
+import DESIGN.datafiles.XMLManager;
 
 public class GameAuthoringBackend {
 
 	public static void main (String args[]){
 
+
+		
 		//	Create the first Level of the game
 		ILevel l = new LevelOne();
 		l.initGraph();
@@ -34,7 +39,15 @@ public class GameAuthoringBackend {
 		IExternalTrigger shoot = new ShootTrigger();
 		l.linkActorsWithTriggers(shoot, a, b);
 
+		//	Create the LevelContainer class	
+		@SuppressWarnings("serial")
+		LevelData levelData = new LevelData(new ArrayList<ILevel>() {{add(l);}});
 		
+		/* 	After Authoring the new Levels they are saved as
+		 * 	resources that the player can choose to play on the game engine.
+		*/	
+		XMLManager xml = new XMLManager();
+		xml.saveLevel(levelData, "authoringLevel1");
 	}
 
 }

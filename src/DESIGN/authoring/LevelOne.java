@@ -1,4 +1,4 @@
-package DESIGN.auth.and.engine;
+package DESIGN.authoring;
 
 import DESIGN.datafiles.UpdateObject;
 

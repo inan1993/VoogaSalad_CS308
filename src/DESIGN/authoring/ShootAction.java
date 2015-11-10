@@ -1,7 +1,4 @@
-package DESIGN.datafiles;
-
-import DESIGN.auth.and.engine.IAction;
-import DESIGN.auth.and.engine.IActor;
+package DESIGN.authoring;
 
 public class ShootAction implements IAction{
 

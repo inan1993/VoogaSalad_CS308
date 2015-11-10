@@ -1,4 +1,4 @@
-package DESIGN.auth.and.engine;
+package DESIGN.authoring;
 
 public interface IAction {
 	public void run(IActor a);
