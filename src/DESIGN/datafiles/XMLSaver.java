@@ -24,11 +24,11 @@ public abstract class XMLSaver {
         System.out.println(serializedActor);
 	}
 	
-	public void saveGame (GameData game) {
+	public void saveGame (GameData game, String filePath) {
     	FileOutputStream fos = null;
 		try{            
 			String xml = mySerializer.toXML(game);
-			fos = new FileOutputStream("src/DESIGN/datafiles/game.xml");
+			fos = new FileOutputStream(filePath);
 			fos.write("<?xml version=\"1.0\"?>".getBytes("UTF-8"));
 			byte[] bytes = xml.getBytes("UTF-8");
 			fos.write(bytes);
