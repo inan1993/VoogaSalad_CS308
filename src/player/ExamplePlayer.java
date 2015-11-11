@@ -40,7 +40,7 @@ public class ExamplePlayer implements Player {
 	}
 
 
-	public GameData selectGame(String fileName) throws GameFileException {
+	private GameData selectGame(String fileName) throws GameFileException {
 		return myXMLManager.loadGame(fileName);
 	}
 	
@@ -59,14 +59,17 @@ public class ExamplePlayer implements Player {
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
-		myGameLoop.pause();
+		//myGameLoop.pause();
+		
+		// should not pause the loop, changes engine to do nothing
+		
 	}
 
 	@Override
 	public void renderGui(Scene s) {
 		// TODO Auto-generated method stub
-
+		
+		// TODO player GUI classes
 	}
 
 }

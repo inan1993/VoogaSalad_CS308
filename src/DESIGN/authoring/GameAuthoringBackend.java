@@ -2,6 +2,7 @@ package DESIGN.authoring;
 
 import java.util.ArrayList;
 
+import DESIGN.datafiles.GameFileException;
 import DESIGN.datafiles.LevelData;
 import DESIGN.datafiles.Spaceship;
 import DESIGN.datafiles.XMLManager;
@@ -47,7 +48,12 @@ public class GameAuthoringBackend {
 		 * 	resources that the player can choose to play on the game engine.
 		*/	
 		XMLManager xml = new XMLManager();
-		xml.saveLevel(levelData, "authoringLevel1");
+		try {
+			xml.saveLevel(levelData, "authoringLevel1");
+		} catch (GameFileException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
