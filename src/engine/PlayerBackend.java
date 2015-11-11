@@ -4,6 +4,7 @@ import authoring.GameAuthoringBackend;
 import data.GameData;
 import data.GameFileException;
 import data.XMLManager;
+import exceptions.EngineException;
 
 public class PlayerBackend {
 	
@@ -16,8 +17,12 @@ public class PlayerBackend {
 		
 		GameData game = xml.loadGame("authoredLevels");
 		
-		IEngine engine = new ExampleEngine();
+		IEngine engine = new GameEngine();
 		engine.load(game);
-		engine.runGame();
+		try {
+			engine.runGame();
+		} catch (EngineException e) {
+			System.err.println("Error in running the engine");
+		}
 	}
 }
