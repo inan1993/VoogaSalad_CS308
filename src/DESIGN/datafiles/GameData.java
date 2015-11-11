@@ -8,4 +8,10 @@ public class GameData {
 		this.stateData = stateData;
 		this.levelData = levelData;
 	}
+	public StateData getStateData() {
+		return stateData;
+	}
+	public LevelData getLevelData() {
+		return levelData;
+	}
 }

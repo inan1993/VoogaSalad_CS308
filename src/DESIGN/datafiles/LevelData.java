@@ -25,4 +25,8 @@ public class LevelData {
 	public void remove (ILevel... levelList) {
 		levels.removeAll(Arrays.asList(levelList));
 	}
+	
+	public List<ILevel> getLevels () {
+		return levels;
+	}
 }
