@@ -2,13 +2,14 @@ package authoring;
 
 import java.util.ArrayList;
 
+import data.GameFileException;
 import data.LevelData;
 import data.Spaceship;
 import data.XMLManager;
 
 public class GameAuthoringBackend {
 
-	public static void main (String args[]){
+public static void main (String args[]) throws GameFileException{
 
 
 		

@@ -53,13 +53,11 @@ public class ExamplePlayer implements Player {
 
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
 		myGameLoop.play();
 	}
 
 	@Override
 	public void pause() {
-		//myGameLoop.pause();
 		
 		// should not pause the loop, changes engine to do nothing
 		
