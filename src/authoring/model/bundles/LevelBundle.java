@@ -1,17 +1,22 @@
 package authoring.model.bundles;
 
-public class LevelBundle<ILevel> extends AbstractBundle<ILevel> {
-	private ILevel currentLevel;
+import authoring.AbstractLevel;
+
+public class LevelBundle extends AbstractBundle<String, AbstractLevel> {
+	private AbstractLevel currentLevel;
 	
-	@SafeVarargs
-	public LevelBundle (ILevel... levels) {
+	public LevelBundle (AbstractLevel... levels) {
 		super();
+		
+		for (AbstractLevel level : levels) {
+			add(level.getUniqueID(), level);
+		}
+		
 		currentLevel = levels[0];
-		this.add(levels);
 		update(getComponents());
 	}
 	
-	public void setLevel (ILevel newLevel) {
+	public void setLevel (AbstractLevel newLevel) {
 		currentLevel = newLevel;
 	}
 }

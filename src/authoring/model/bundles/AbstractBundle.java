@@ -1,42 +1,39 @@
 package authoring.model.bundles;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 
-public abstract class AbstractBundle<T> extends Observable implements Iterable<T> {
-	private List<T> components;
+public abstract class AbstractBundle<K, V> extends Observable implements Iterable<V> {
+	private Map<K, V> components;
 	
 	public AbstractBundle () {
-		components = new ArrayList<T>();
+		components = new HashMap<K, V>();
 	}
 	
 	public int getSize () {
 		return components.size();
 	}
 	
-	public void add (T component) {
-		components.add(component);
+	public void add (K key, V value) {
+		components.put(key, value);
 		update(components);
 	}
 	
-	@SuppressWarnings("unchecked")
-	public void add (T... otherComponents) {
-		components.addAll(Arrays.asList(otherComponents));
+	public void add (Map<K, V> otherComponents) {
+		components.putAll(otherComponents);
 		update(components);
 	}
 	
-	public boolean remove (T component) {
-		boolean hasRemoved = components.remove(component);
+	public void remove (K componentID) {
+		components.remove(componentID);
 		update(components);
-		return hasRemoved;
 	}
 	
 	@Override
-	public Iterator<T> iterator () {
-		return components.iterator();
+	public Iterator<V> iterator () {
+		return components.values().iterator();
 	}
 	
 	protected void update (Object o) {
@@ -44,7 +41,7 @@ public abstract class AbstractBundle<T> extends Observable implements Iterable<T
 		notifyObservers(o);
 	}
 	
-	protected List<T> getComponents () {
+	protected Map<K, V> getComponents () {
 		return components;
 	}
 }

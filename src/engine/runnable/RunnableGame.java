@@ -7,7 +7,7 @@ import javafx.animation.Timeline;
 
 public class RunnableGame implements IRunnable {
 
-	private LevelBundle<ILevel> levelBundle;
+	private LevelBundle levelBundle;
 	private Timeline gameLoop;
 	
 	public RunnableGame (GameData gameData) {
