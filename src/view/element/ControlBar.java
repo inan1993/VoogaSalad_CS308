@@ -16,13 +16,15 @@ import view.screen.StartScreen;
 public class ControlBar extends AbstractElement {
 
 	private AbstractScreen currentScreen;
+	private Workspace workspace;
 	private double width;
 
-	public ControlBar(GridPane pane, AbstractScreen screen, double width) {
+	public ControlBar(GridPane pane, AbstractScreen screen, Workspace workspace, double width) {
 		super(pane);
 		findResources();
 		this.currentScreen = screen;
 		this.width = width;
+		this.workspace = workspace;
 		makePane();
 	}
 
@@ -42,7 +44,9 @@ public class ControlBar extends AbstractElement {
 	private void makeTools(ToolBar toolBar) {
 		Button backButton = makeButton("back");
 		backButton.setOnAction(e -> currentScreen.setNextScreen(new StartScreen()));
-		toolBar.getItems().addAll(backButton);
+		Button addButton = makeButton("add");
+		addButton.setOnAction(e -> workspace.addLevel());
+		toolBar.getItems().addAll(backButton, addButton);
 	}
 
 	private Button makeButton(String s) {
