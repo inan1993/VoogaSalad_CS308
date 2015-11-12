@@ -47,7 +47,7 @@ public static void main (String args[]) throws GameFileException{
 
 		//	Create the LevelContainer class	
 		@SuppressWarnings("serial")
-		LevelData levelData = new LevelData(new ArrayList<ILevel>() {{add(l);}});
+//		LevelData levelData = new LevelData(new ArrayList<ILevel>() {{add(l);}});
 		
 		/* 	After Authoring the new Levels they are saved as
 		 * 	resources that the player can choose to play on the game engine.

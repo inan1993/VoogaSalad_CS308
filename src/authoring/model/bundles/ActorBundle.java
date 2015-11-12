@@ -1,12 +1,7 @@
 package authoring.model.bundles;
 
-import engine.runnable.IRunnable;
+import authoring.model.actors.IActor;
 
-public class ActorBundle extends AbstractBundle<String, AbstractActor> implements IRunnable {
-
-	@Override
-	public void run() {
-		
-	}
+public class ActorBundle extends AbstractBundle<String, IActor>{
 
 }
