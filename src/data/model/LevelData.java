@@ -3,14 +3,14 @@ package data.model;
 import java.util.Arrays;
 import java.util.List;
 
-import authoring.ILevel;
+import authoring.AbstractLevel;
 
 public class LevelData {
-	private List<ILevel> levels;
+	private List<AbstractLevel> levels;
 	private int numberOfLevels;
 	
-	public LevelData(List<ILevel> arrayList) {
-		this.levels = arrayList;
+	public LevelData(List<AbstractLevel> levelList) {
+		this.levels = levelList;
 		updateNumberOfLevels();
 	}
 
@@ -18,15 +18,15 @@ public class LevelData {
 		numberOfLevels = levels.size();
 	}
 	
-	public void add (ILevel... levelList) {
+	public void add (AbstractLevel... levelList) {
 		levels.addAll(Arrays.asList(levelList));
 	}
 	
-	public void remove (ILevel... levelList) {
+	public void remove (AbstractLevel... levelList) {
 		levels.removeAll(Arrays.asList(levelList));
 	}
 	
-	public List<ILevel> getLevels () {
+	public List<AbstractLevel> getLevels () {
 		return levels;
 	}
 }

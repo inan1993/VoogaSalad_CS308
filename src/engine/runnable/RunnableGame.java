@@ -1,22 +1,19 @@
 package engine.runnable;
 
-import authoring.ILevel;
 import authoring.model.bundles.LevelBundle;
 import data.model.GameData;
-import javafx.animation.Timeline;
 
 public class RunnableGame implements IRunnable {
 
 	private LevelBundle levelBundle;
-	private Timeline gameLoop;
 	
 	public RunnableGame (GameData gameData) {
-		
+		load(gameData);
 	}
 	
 	@Override
 	public void run () {
-		
+		levelBundle.run();
 	}
 	
 	public void reset () {
@@ -24,7 +21,7 @@ public class RunnableGame implements IRunnable {
 	}
 	
 	public void load (GameData data) {
-		
+		levelBundle = data.getRunnableLevels();
 	}
 
 }
