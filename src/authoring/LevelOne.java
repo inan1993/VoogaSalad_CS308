@@ -2,14 +2,11 @@ package authoring;
 
 import authoring.model.actors.IActor;
 import authoring.model.triggers.ITriggerEvent;
-import data.UpdateObject;
 
-public class LevelOne implements ILevel{
+public class LevelOne implements ILevel, Runnable {
 
 	@Override
-	public UpdateObject run() {
-		// TODO Auto-generated method stub
-		return null;
+	public void run() {
 	}
 
 	@Override
