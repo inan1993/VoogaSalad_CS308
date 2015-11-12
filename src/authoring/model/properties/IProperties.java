@@ -1,4 +1,4 @@
-package authoring.model;
+package authoring.model.properties;
 
 public interface IProperties {
 	public Object getProperty(String peropertyName);

@@ -1,8 +1,8 @@
 package data;
 
-import authoring.model.IActor;
-import authoring.model.IProperties;
-import authoring.model.ISelfTrigger;
+import authoring.model.actors.IActor;
+import authoring.model.properties.IProperties;
+import authoring.model.triggers.selftriggers.ISelfTrigger;
 import javafx.scene.paint.Color;
 
 public class Spaceship implements IActor {

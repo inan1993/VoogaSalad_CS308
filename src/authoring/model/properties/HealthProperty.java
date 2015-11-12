@@ -1,4 +1,4 @@
-package authoring.model;
+package authoring.model.properties;
 
 public class HealthProperty implements IProperties{
 
@@ -13,5 +13,4 @@ public class HealthProperty implements IProperties{
 		// TODO Auto-generated method stub
 		
 	}
-
 }

@@ -1,5 +1,7 @@
-package authoring.model;
+package authoring;
 
+import authoring.model.actors.IActor;
+import authoring.model.triggers.ITriggerEvent;
 import data.UpdateObject;
 
 public interface ILevel {
