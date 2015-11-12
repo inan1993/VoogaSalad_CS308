@@ -1,4 +1,4 @@
-package data;
+package data.examples;
 
 import authoring.IActor;
 import authoring.IProperty;

@@ -1,4 +1,4 @@
-package data;
+package data.saver;
 
 public class GameSaver extends XMLSaver {
     

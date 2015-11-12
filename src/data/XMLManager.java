@@ -7,6 +7,11 @@ import java.io.IOException;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
+import data.model.GameData;
+import data.model.LevelData;
+import data.model.StateData;
+import exceptions.data.GameFileException;
+
 /*
  *  EXAMPLE CODE FOR SAVING AND LOADING 
  */

@@ -1,10 +1,10 @@
 package engine;
 
 import authoring.GameAuthoringBackend;
-import data.GameData;
-import data.GameFileException;
 import data.XMLManager;
+import data.model.GameData;
 import exceptions.EngineException;
+import exceptions.data.GameFileException;
 
 public class PlayerBackend {
 	

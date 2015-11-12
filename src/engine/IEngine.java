@@ -3,7 +3,7 @@ package engine;
 import java.util.List;
 
 import authoring.ILevel;
-import data.GameData;
+import data.model.GameData;
 import exceptions.EngineException;
 
 /**

@@ -1,10 +1,15 @@
-package data;
+package data.saver;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import authoring.ILevel;
 import authoring.LevelOne;
+import data.IFileManager;
+import data.examples.Spaceship;
+import data.model.GameData;
+import data.model.LevelData;
+import data.model.StateData;
 
 public class SaveMaster implements IFileManager{
 	private GameSaver myGameSaver;

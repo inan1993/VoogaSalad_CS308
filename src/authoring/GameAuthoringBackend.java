@@ -2,10 +2,10 @@ package authoring;
 
 import java.util.ArrayList;
 
-import data.GameFileException;
-import data.LevelData;
-import data.Spaceship;
 import data.XMLManager;
+import data.examples.Spaceship;
+import data.model.LevelData;
+import exceptions.data.GameFileException;
 
 public class GameAuthoringBackend {
 

@@ -1,6 +1,8 @@
-package data;
+package exceptions.data;
 
-public class GameFileException extends Exception {
+import exceptions.DataException;
+
+public class GameFileException extends DataException {
 	/**
 	 *  General file exception
 	 */
@@ -9,6 +11,6 @@ public class GameFileException extends Exception {
 		super();
 	}
 	public GameFileException(String format) {
-		super(format);
+		super();
 	}
 }

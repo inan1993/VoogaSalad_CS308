@@ -1,4 +1,6 @@
-package exceptions;
+package exceptions.engine;
+
+import exceptions.EngineException;
 
 /**
  * Thrown when IEngine attempts to run a game that has not been instantiated, or initialized. w.e.

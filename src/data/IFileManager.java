@@ -1,5 +1,10 @@
 package data;
 
+import data.model.GameData;
+import data.model.LevelData;
+import data.model.StateData;
+import exceptions.data.GameFileException;
+
 /*
  *  Interface for the file manager.
  *  Used by the authoring environment to save/load entire games/levels.
