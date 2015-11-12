@@ -6,6 +6,7 @@ import java.util.Map;
 public abstract class AProperties implements IProperties{
 
 	Map<String, Property> properties;
+	
 	public AProperties (){
 		properties = new HashMap<String, Property>();
 	}
@@ -18,5 +19,10 @@ public abstract class AProperties implements IProperties{
 	@Override
 	public <T> void setProperty(Property<T> value){
 		properties.put(value.getStringIdentifier(), value);
+	}
+	
+	@Override
+	public Map<String, Property> getProperties(){
+		return properties;
 	}
 }
