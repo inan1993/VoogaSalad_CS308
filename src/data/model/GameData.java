@@ -1,4 +1,4 @@
-package DESIGN.datafiles;
+package data.model;
 
 public class GameData {
 	private StateData stateData;

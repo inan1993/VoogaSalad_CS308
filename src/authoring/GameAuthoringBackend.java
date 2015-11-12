@@ -1,15 +1,22 @@
-package DESIGN.authoring;
+package authoring;
 
 import java.util.ArrayList;
 
-import DESIGN.datafiles.GameFileException;
-import DESIGN.datafiles.LevelData;
-import DESIGN.datafiles.Spaceship;
-import DESIGN.datafiles.XMLManager;
+import authoring.model.actors.IActor;
+import authoring.model.properties.HealthProperty;
+import authoring.model.properties.IProperties;
+import authoring.model.triggers.externaltriggers.IExternalTrigger;
+import authoring.model.triggers.externaltriggers.ShootTrigger;
+import authoring.model.triggers.selftriggers.BreatheTrigger;
+import authoring.model.triggers.selftriggers.ISelfTrigger;
+import data.XMLManager;
+import data.examples.Spaceship;
+import data.model.LevelData;
+import exceptions.data.GameFileException;
 
 public class GameAuthoringBackend {
 
-	public static void main (String args[]){
+public static void main (String args[]) throws GameFileException{
 
 
 		
@@ -22,14 +29,14 @@ public class GameAuthoringBackend {
 		 * 	And them add them to the level.
 		 */		
 		IActor a = new Spaceship();
-		ISelfTrigger e1 = new BreatheEvent();
-		IProperty p = new HealthProperty();
+		ISelfTrigger e1 = new BreatheTrigger();
+		IProperties p = new HealthProperty();
 		a.addProperty(p);
 		a.addSelfTrigger(e1);
 		l.addActor(a);
 
 		IActor b = new Spaceship();
-		ISelfTrigger e2 = new BreatheEvent();
+		ISelfTrigger e2 = new BreatheTrigger();
 		b.addSelfTrigger(e2);
 		l.addActor(b);
 		
@@ -48,12 +55,7 @@ public class GameAuthoringBackend {
 		 * 	resources that the player can choose to play on the game engine.
 		*/	
 		XMLManager xml = new XMLManager();
-		try {
-			xml.saveLevel(levelData, "authoringLevel1");
-		} catch (GameFileException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		xml.saveLevel(levelData, "authoringLevel1");
 	}
 
 }
