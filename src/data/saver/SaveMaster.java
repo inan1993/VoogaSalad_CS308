@@ -3,8 +3,10 @@ package data.saver;
 import java.util.ArrayList;
 import java.util.List;
 
+import authoring.AbstractLevel;
 import authoring.ILevel;
 import authoring.LevelOne;
+import authoring.model.bundles.LevelBundle;
 import data.IFileManager;
 import data.examples.Spaceship;
 import data.model.GameData;
@@ -26,9 +28,11 @@ public class SaveMaster implements IFileManager{
 		System.out.println("saving");
 		ILevel level = new LevelOne();
 		level.addActor(s);
-		List<ILevel> levelList = new ArrayList<ILevel>();
-		levelList.add(level);
-		GameData game = new GameData(new StateData(), new LevelData(levelList));
+//		List<LevelOne> levelList = new ArrayList<LevelOne>();
+		LevelBundle levelBundle = new LevelBundle();
+//		levelList.add(level);
+//		GameData game = new GameData(new StateData(), new LevelData(levelList));
+		GameData game = new GameData(new StateData(), new LevelData(null));
 		q.saveGame(game, "src/DESIGN/datafiles/game.xml");
 		
 //		q.save(s);

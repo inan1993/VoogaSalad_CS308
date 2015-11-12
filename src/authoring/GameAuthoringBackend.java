@@ -53,7 +53,8 @@ public static void main (String args[]) throws GameFileException{
 		 * 	resources that the player can choose to play on the game engine.
 		*/	
 		XMLManager xml = new XMLManager();
-		xml.saveLevel(levelData, "authoringLevel1");
+//		xml.saveLevel(levelData, "authoringLevel1");
+		xml.saveLevel(null, "authoringLevel1");
 	}
 
 }
