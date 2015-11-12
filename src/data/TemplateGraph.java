@@ -2,9 +2,9 @@ package data;
 
 import java.util.List;
 
-import authoring.IAction;
-import authoring.IActor;
-import authoring.ITriggerEvent;
+import authoring.model.actions.IAction;
+import authoring.model.actors.IActor;
+import authoring.model.triggers.ITriggerEvent;
 
 public interface TemplateGraph {
 	

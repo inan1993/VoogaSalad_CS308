@@ -6,7 +6,7 @@ import java.io.IOException;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import authoring.IActor;
+import authoring.model.actors.IActor;
 import data.model.GameData;
 
 /*

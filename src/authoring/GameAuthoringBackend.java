@@ -2,6 +2,13 @@ package authoring;
 
 import java.util.ArrayList;
 
+import authoring.model.actors.IActor;
+import authoring.model.properties.HealthProperty;
+import authoring.model.properties.IProperties;
+import authoring.model.triggers.externaltriggers.IExternalTrigger;
+import authoring.model.triggers.externaltriggers.ShootTrigger;
+import authoring.model.triggers.selftriggers.BreatheTrigger;
+import authoring.model.triggers.selftriggers.ISelfTrigger;
 import data.XMLManager;
 import data.examples.Spaceship;
 import data.model.LevelData;
@@ -22,14 +29,14 @@ public static void main (String args[]) throws GameFileException{
 		 * 	And them add them to the level.
 		 */		
 		IActor a = new Spaceship();
-		ISelfTrigger e1 = new BreatheEvent();
-		IProperty p = new HealthProperty();
+		ISelfTrigger e1 = new BreatheTrigger();
+		IProperties p = new HealthProperty();
 		a.addProperty(p);
 		a.addSelfTrigger(e1);
 		l.addActor(a);
 
 		IActor b = new Spaceship();
-		ISelfTrigger e2 = new BreatheEvent();
+		ISelfTrigger e2 = new BreatheTrigger();
 		b.addSelfTrigger(e2);
 		l.addActor(b);
 		
