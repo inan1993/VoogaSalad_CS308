@@ -2,20 +2,23 @@ package view.screen;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
+import view.element.Buttons;
+import view.element.Icons;
 import view.element.Title;
 
 public class StartScreen extends AbstractScreen {
 
 	private Title t;
+	private Icons i;
+	private Buttons b;
 
 	public StartScreen() {
+		findResources();
 		WIDTH = Integer.parseInt(myResources.getString("width"));
 		HEIGHT = Integer.parseInt(myResources.getString("height"));
-		root = new GridPane();
-		scene = new Scene(root, WIDTH, HEIGHT);
-		root.setVgap(Integer.parseInt(myResources.getString("vgap")));
 		this.title = myResources.getString("title");
 		makeScene();
+		scene = new Scene(root, WIDTH, HEIGHT);
 	}
 
 	@Override
@@ -24,9 +27,14 @@ public class StartScreen extends AbstractScreen {
 
 	@Override
 	protected void makeScene() {
-		super.makePanes(2);
+		GridPane r = new GridPane();
+		r.setVgap(Integer.parseInt(myResources.getString("vgap")));
+		super.makePanes(3);
 		t = new Title(myPanes.get(0), title);
-		root.add(myPanes.get(0), 0, 0);
-		center(root);
+		i = new Icons(myPanes.get(1), this);
+		b = new Buttons(myPanes.get(2), this);
+		stackVertical(r);
+		root = r;
 	}
+
 }

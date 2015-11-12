@@ -8,10 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import view.visual.AbstractVisual;
 
 public abstract class AbstractScreen extends AbstractVisual implements AbstractScreenInterface {
-	protected GridPane root;
+	protected Pane root;
 	protected Scene scene;
 	protected int WIDTH;
 	protected int HEIGHT;
@@ -52,15 +53,29 @@ public abstract class AbstractScreen extends AbstractVisual implements AbstractS
 		}
 	}
 
-	private void returnToMenu() {
-		StartScreen newScreen = new StartScreen();
-		nextScreen = newScreen;
-	}
-
 	protected void showError(String title, String message) {
 		Alert uhoh = new Alert(AlertType.ERROR);
 		uhoh.setTitle(title);
 		uhoh.setContentText(message);
 		uhoh.show();
 	}
+
+	protected void stackVertical(GridPane r) {
+		for (int i = 0; i < myPanes.size(); i++) {
+			r.add(myPanes.get(i), 0, i);
+		}
+		center(r);
+	}
+
+	protected void stackHorizontal(GridPane r) {
+		for (int i = 0; i < myPanes.size(); i++) {
+			r.add(myPanes.get(i), i, 0);
+		}
+		center(r);
+	}
+
+	public void setNextScreen(AbstractScreen screen) {
+		this.nextScreen = screen;
+	}
+
 }
