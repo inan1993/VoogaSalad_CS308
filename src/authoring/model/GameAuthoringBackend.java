@@ -1,15 +1,15 @@
-package DESIGN.authoring;
+package authoring.model;
 
 import java.util.ArrayList;
 
-import DESIGN.datafiles.GameFileException;
-import DESIGN.datafiles.LevelData;
-import DESIGN.datafiles.Spaceship;
-import DESIGN.datafiles.XMLManager;
+import data.GameFileException;
+import data.LevelData;
+import data.Spaceship;
+import data.XMLManager;
 
 public class GameAuthoringBackend {
 
-	public static void main (String args[]){
+public static void main (String args[]) throws GameFileException{
 
 
 		
@@ -23,7 +23,7 @@ public class GameAuthoringBackend {
 		 */		
 		IActor a = new Spaceship();
 		ISelfTrigger e1 = new BreatheEvent();
-		IProperty p = new HealthProperty();
+		IProperties p = new HealthProperty();
 		a.addProperty(p);
 		a.addSelfTrigger(e1);
 		l.addActor(a);
@@ -48,12 +48,7 @@ public class GameAuthoringBackend {
 		 * 	resources that the player can choose to play on the game engine.
 		*/	
 		XMLManager xml = new XMLManager();
-		try {
-			xml.saveLevel(levelData, "authoringLevel1");
-		} catch (GameFileException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		xml.saveLevel(levelData, "authoringLevel1");
 	}
 
 }

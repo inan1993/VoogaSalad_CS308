@@ -1,9 +1,9 @@
-package DESIGN.datafiles;
+package data;
 
 import java.util.Arrays;
 import java.util.List;
 
-import DESIGN.authoring.ILevel;
+import authoring.model.ILevel;
 
 public class LevelData {
 	private List<ILevel> levels;
