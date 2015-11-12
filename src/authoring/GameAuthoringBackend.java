@@ -3,8 +3,6 @@ package authoring;
 import java.util.ArrayList;
 
 import authoring.model.actors.IActor;
-import authoring.model.properties.HealthProperty;
-import authoring.model.properties.IProperties;
 import authoring.model.triggers.externaltriggers.IExternalTrigger;
 import authoring.model.triggers.externaltriggers.ShootTrigger;
 import authoring.model.triggers.selftriggers.BreatheTrigger;
@@ -30,8 +28,8 @@ public static void main (String args[]) throws GameFileException{
 		 */		
 		IActor a = new Spaceship();
 		ISelfTrigger e1 = new BreatheTrigger();
-		IProperties p = new HealthProperty();
-		a.addProperty(p);
+//		IProperties p = new HealthProperty();
+//		a.addProperty(p);
 		a.addSelfTrigger(e1);
 		l.addActor(a);
 
