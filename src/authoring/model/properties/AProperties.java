@@ -5,18 +5,18 @@ import java.util.Map;
 
 public abstract class AProperties implements IProperties{
 
-	Map<String, AProperty> properties;
+	Map<String, Property> properties;
 	public AProperties (){
-		properties = new HashMap<String, AProperty>();
+		properties = new HashMap<String, Property>();
 	}
 	
 	@Override
-	public AProperty getProperty(String propertyName){
+	public Property getProperty(String propertyName){
 		return properties.get(propertyName);
 	}
 	
 	@Override
-	public <T> void setProperty(String name, AProperty<T> value){
-		properties.put(name, value);
+	public <T> void setProperty(Property<T> value){
+		properties.put(value.getStringIdentifier(), value);
 	}
 }
