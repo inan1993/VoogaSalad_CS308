@@ -1,6 +1,6 @@
 package data;
 
-import authoring.IActor;
+import authoring.model.IActor;
 
 public class LevelSaver extends XMLSaver {
 	

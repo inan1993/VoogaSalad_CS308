@@ -1,8 +1,8 @@
 package data;
 
-import authoring.IActor;
-import authoring.IProperty;
-import authoring.ISelfTrigger;
+import authoring.model.IActor;
+import authoring.model.IProperties;
+import authoring.model.ISelfTrigger;
 import javafx.scene.paint.Color;
 
 public class Spaceship implements IActor {
@@ -24,7 +24,7 @@ public class Spaceship implements IActor {
 		myColor = color;
 	}
 	@Override
-	public void addProperty(IProperty property) {
+	public void addProperty(IProperties property) {
 		// TODO Auto-generated method stub
 		
 	}

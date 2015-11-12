@@ -3,7 +3,7 @@ package data;
 import java.util.Arrays;
 import java.util.List;
 
-import authoring.ILevel;
+import authoring.model.ILevel;
 
 public class LevelData {
 	private List<ILevel> levels;

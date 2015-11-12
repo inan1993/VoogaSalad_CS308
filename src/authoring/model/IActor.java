@@ -1,6 +1,6 @@
-package authoring;
+package authoring.model;
 
 public interface IActor {
-	public void addProperty(IProperty property);
+	public void addProperty(IProperties property);
 	public void addSelfTrigger(ISelfTrigger trigger);
 }

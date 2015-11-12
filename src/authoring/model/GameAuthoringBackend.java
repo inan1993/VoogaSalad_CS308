@@ -1,4 +1,4 @@
-package authoring;
+package authoring.model;
 
 import java.util.ArrayList;
 
@@ -23,7 +23,7 @@ public static void main (String args[]) throws GameFileException{
 		 */		
 		IActor a = new Spaceship();
 		ISelfTrigger e1 = new BreatheEvent();
-		IProperty p = new HealthProperty();
+		IProperties p = new HealthProperty();
 		a.addProperty(p);
 		a.addSelfTrigger(e1);
 		l.addActor(a);

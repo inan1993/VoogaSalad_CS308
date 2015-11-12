@@ -1,6 +1,6 @@
 package engine;
 
-import authoring.GameAuthoringBackend;
+import authoring.model.GameAuthoringBackend;
 import data.GameData;
 import data.GameFileException;
 import data.XMLManager;

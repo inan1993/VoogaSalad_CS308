@@ -1,4 +1,4 @@
-package authoring;
+package authoring.model;
 
 public interface ITriggerEvent {
     

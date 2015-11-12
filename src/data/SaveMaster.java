@@ -3,8 +3,8 @@ package data;
 import java.util.ArrayList;
 import java.util.List;
 
-import authoring.ILevel;
-import authoring.LevelOne;
+import authoring.model.ILevel;
+import authoring.model.LevelOne;
 
 public class SaveMaster implements IFileManager{
 	private GameSaver myGameSaver;
