@@ -20,9 +20,7 @@ public interface IEngine {
 
 	public boolean init(List<ILevel> levelList);
 	
-	public boolean reset();
-	public GameData save();
-	public boolean load(GameData state);
-	public void runGame() throws EngineException;
-	
+	public void reset ();
+	public void load(GameData game);
+	public void play() throws EngineException;
 }

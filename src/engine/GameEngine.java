@@ -4,21 +4,15 @@ import java.util.List;
 
 import authoring.ILevel;
 import data.model.GameData;
+import engine.runnable.RunnableGame;
 import exceptions.EngineException;
 
 public class GameEngine implements IEngine {
 
-	//TODO: Two options
-	// Option 1: Keep GameData
-	// Option 2: More loosely couple the components of the GameData into separate components (Currently StateData, LevelData);
-	public GameData game;
-	
-	public GameEngine () {
-		this.game = null;
-	}
+	public RunnableGame runnableGame;
 	
 	public GameEngine (GameData game) {
-		this.game = game;
+		this.runnableGame = new RunnableGame(game);
 	}
 	
 	@Override
@@ -27,26 +21,17 @@ public class GameEngine implements IEngine {
 	}
 
 	@Override
-	public boolean reset() {
-		return false;
+	public void reset() {
+		runnableGame.reset();
 	}
 
 	@Override
-	public GameData save() {
-		return null;
+	public void load(GameData game) {
+		 runnableGame.load(game);
 	}
 
 	@Override
-	public boolean load(GameData state) {
-		
-		//TODO: Is this necessary? What is the purpose of having this function return a boolean?
-		//Perhaps better would be to throw an exception
-		return true;
+	public void play () throws EngineException {
+		runnableGame.run();
 	}
-
-	@Override
-	public void runGame() throws EngineException {
-		
-	}
-
 }

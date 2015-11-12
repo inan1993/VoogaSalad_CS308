@@ -1,8 +1,10 @@
-package engine;
+package engine.example;
 
 import authoring.GameAuthoringBackend;
 import data.XMLManager;
 import data.model.GameData;
+import engine.GameEngine;
+import engine.IEngine;
 import exceptions.EngineException;
 import exceptions.data.GameFileException;
 
@@ -17,10 +19,10 @@ public class PlayerBackend {
 		
 		GameData game = xml.loadGame("authoredLevels");
 		
-		IEngine engine = new GameEngine();
+		IEngine engine = new GameEngine(null);
 		engine.load(game);
 		try {
-			engine.runGame();
+			engine.play();
 		} catch (EngineException e) {
 			System.err.println("Error in running the engine");
 		}
