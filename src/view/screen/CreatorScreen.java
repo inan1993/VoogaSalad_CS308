@@ -9,6 +9,7 @@ public class CreatorScreen extends AbstractScreen {
 
 	private ControlBar t;
 	private Workspace w;
+	
 
 	public CreatorScreen() {
 		findResources();
@@ -19,6 +20,7 @@ public class CreatorScreen extends AbstractScreen {
 		root.prefHeightProperty().bind(scene.heightProperty());
 		root.prefWidthProperty().bind(scene.widthProperty());
 		this.title = myResources.getString("title");
+		System.out.println(root.widthProperty());
 	}
 
 	@Override

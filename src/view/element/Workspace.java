@@ -25,9 +25,13 @@ public class Workspace extends AbstractElement {
 		manager.setSide(Side.TOP);
 		pane.add(manager, 0, 0);
 		manager.getSelectionModel().selectedItemProperty().addListener((ov, oldTab, newTab) -> {
-			currentLevel = levels.get(Integer.parseInt(newTab.getId()));
 			manager.maxWidthProperty().unbind();
-			manager.maxWidthProperty().bind(currentLevel.getMap().widthProperty());
+			try {
+				currentLevel = levels.get(Integer.parseInt(newTab.getId()));
+				manager.maxWidthProperty().bind(currentLevel.getMap().widthProperty());
+			} catch (NullPointerException e) {
+				currentLevel = null;
+			}
 		});
 	}
 
