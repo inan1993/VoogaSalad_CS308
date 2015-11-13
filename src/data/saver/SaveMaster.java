@@ -6,7 +6,7 @@ import java.util.List;
 import authoring.AbstractLevel;
 import authoring.ILevel;
 import authoring.LevelOne;
-import authoring.model.bundles.LevelBundle;
+import authoring.model.bundles.Bundle;
 import data.IFileManager;
 import data.examples.Spaceship;
 import data.model.GameData;
@@ -29,7 +29,7 @@ public class SaveMaster implements IFileManager{
 		ILevel level = new LevelOne();
 		level.addActor(s);
 //		List<LevelOne> levelList = new ArrayList<LevelOne>();
-		LevelBundle levelBundle = new LevelBundle();
+		Bundle<AbstractLevel> levelBundle = null;
 //		levelList.add(level);
 //		GameData game = new GameData(new StateData(), new LevelData(levelList));
 		GameData game = new GameData(new StateData(), new LevelData(null));

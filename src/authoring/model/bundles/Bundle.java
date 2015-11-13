@@ -5,28 +5,36 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Observable;
 
-public abstract class AbstractBundle<K, V> extends Observable implements Iterable<V> {
-	private Map<K, V> components;
+/**
+ * Bundle Class
+ * 
+ * @author Austin
+ *
+ * @param <V>
+ */
+
+public abstract class Bundle<V extends Identifiable> extends Observable implements Iterable<V> {
+	private Map<String, V> components;
 	
-	public AbstractBundle () {
-		components = new HashMap<K, V>();
+	public Bundle () {
+		components = new HashMap<String, V>();
 	}
 	
 	public int getSize () {
 		return components.size();
 	}
 	
-	public void add (K key, V value) {
-		components.put(key, value);
+	public void add (V value) {
+		components.put(value.getUniqueID(), value);
 		update(components);
 	}
 	
-	public void add (Map<K, V> otherComponents) {
+	public void add (Map<String, V> otherComponents) {
 		components.putAll(otherComponents);
 		update(components);
 	}
 	
-	public void remove (K componentID) {
+	public void remove (String componentID) {
 		components.remove(componentID);
 		update(components);
 	}
@@ -41,7 +49,7 @@ public abstract class AbstractBundle<K, V> extends Observable implements Iterabl
 		notifyObservers(o);
 	}
 	
-	protected Map<K, V> getComponents () {
+	protected Map<String, V> getComponents () {
 		return components;
 	}
 }

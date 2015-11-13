@@ -3,7 +3,7 @@ package data.model;
 import java.util.List;
 
 import authoring.AbstractLevel;
-import authoring.model.bundles.LevelBundle;
+import authoring.model.bundles.Bundle;
 
 public class GameData {
 	private StateData stateData;
@@ -20,9 +20,8 @@ public class GameData {
 		return levelData;
 	}
 	
-	public LevelBundle getRunnableLevels () {
+	public Bundle getRunnableLevels () {
 		List<AbstractLevel> myLevels = levelData.getLevels();
-		LevelBundle levelBundle = new LevelBundle((AbstractLevel[]) myLevels.toArray());
-		return levelBundle;
+		return null;
 	}
 }

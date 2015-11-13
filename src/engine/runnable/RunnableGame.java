@@ -1,11 +1,11 @@
 package engine.runnable;
 
-import authoring.model.bundles.LevelBundle;
+import authoring.model.bundles.Bundle;
 import data.model.GameData;
 
 public class RunnableGame implements IRunnable {
 
-	private LevelBundle levelBundle;
+	private Bundle levelBundle;
 	
 	public RunnableGame (GameData gameData) {
 		load(gameData);
@@ -13,7 +13,7 @@ public class RunnableGame implements IRunnable {
 	
 	@Override
 	public void run () {
-		levelBundle.run();
+
 	}
 	
 	public void reset () {
@@ -21,7 +21,6 @@ public class RunnableGame implements IRunnable {
 	}
 	
 	public void load (GameData data) {
-		levelBundle = data.getRunnableLevels();
 	}
 
 }
