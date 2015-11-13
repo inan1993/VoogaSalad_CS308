@@ -1,6 +1,7 @@
 package authoring.model.actions;
 
 import authoring.model.actors.IActor;
+import authoring.model.properties.Property;
 
 public class MoveAction implements IAction{
 
@@ -11,7 +12,16 @@ public class MoveAction implements IAction{
 	
 	@Override
 	public void run() {
-//		a.getProperties()
+		@SuppressWarnings("unchecked")
+		Property<Integer> health = (Property<Integer>) myActor.getProperties().getComponents().get("health");
+		Integer h = health.getValue();
+		health.setValue(++h);
+		System.out.println("Health: "+health.getValue());
+	}
+
+	@Override
+	public String getUniqueID() {
+		return getClass().getName();
 	}
 
 }

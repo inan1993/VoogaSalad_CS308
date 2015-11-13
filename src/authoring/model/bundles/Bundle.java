@@ -13,7 +13,7 @@ import java.util.Observable;
  * @param <V>
  */
 
-public abstract class Bundle<V extends Identifiable> extends Observable implements Iterable<V> {
+public class Bundle<V extends Identifiable> extends Observable implements Iterable<V> {
 	private Map<String, V> components;
 	
 	public Bundle () {
@@ -49,7 +49,7 @@ public abstract class Bundle<V extends Identifiable> extends Observable implemen
 		notifyObservers(o);
 	}
 	
-	protected Map<String, V> getComponents () {
+	public Map<String, V> getComponents () {
 		return components;
 	}
 }

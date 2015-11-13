@@ -3,7 +3,7 @@ package data.examples;
 import authoring.model.actions.IAction;
 import authoring.model.actors.IActor;
 import authoring.model.properties.IProperties;
-import authoring.model.triggers.selftriggers.ISelfTrigger;
+import authoring.model.triggers.selftriggers.ASelfTrigger;
 import javafx.scene.paint.Color;
 
 public class Spaceship implements IActor {
@@ -31,7 +31,7 @@ public class Spaceship implements IActor {
 		return null;
 	}
 	@Override
-	public ISelfTrigger getSelfTriggers() {
+	public ASelfTrigger getSelfTriggers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -41,7 +41,7 @@ public class Spaceship implements IActor {
 		return null;
 	}
 	@Override
-	public void addSelfTrigger(ISelfTrigger e1) {
+	public void addSelfTrigger(ASelfTrigger e1) {
 		// TODO Auto-generated method stub
 		
 	}
