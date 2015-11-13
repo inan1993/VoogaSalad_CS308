@@ -11,6 +11,10 @@ public class GameEngine implements IEngine {
 
 	public RunnableGame runnableGame;
 	
+	public GameEngine () {
+		this(null);
+	}
+	
 	public GameEngine (GameData game) {
 		this.runnableGame = new RunnableGame(game);
 	}
