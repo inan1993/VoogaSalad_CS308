@@ -1,30 +1,45 @@
 package controller;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import javafx.stage.Stage;
 import view.screen.AbstractScreen;
 import view.screen.StartScreen;
 
-public class RootManager {
+/**
+ * 
+ * @author Sung-Hoon and Austin
+ *
+ */
+
+public class RootManager implements Observer {
 
 	private Stage stage;
-	private AbstractScreen currentScreen;
+	private AController currentController;
 
 	public RootManager(Stage s) {
 		stage = s;
-		currentScreen = new StartScreen();
-		stage.setScene(currentScreen.getScene());
+		AbstractScreen startScreen = new StartScreen();
+		currentController = new MenuController(stage, startScreen);
+		stage.setScene(startScreen.getScene());
 		stage.show();
 		stage.setResizable(false);
 	}
 
 	public void run() {
-		currentScreen.run();
-		if (currentScreen.getNextScreen() != null) {
-			currentScreen = currentScreen.getNextScreen();
-			stage.setScene(currentScreen.getScene());
-			stage.setTitle(currentScreen.getTitle());
-			stage.show();
+		try {
+			currentController.play();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			// TODO gui stuff
 		}
+	}
+
+	@Override
+	public void update(Observable arg0, Object controller) {
+		// TODO Auto-generated method stub
+		currentController = (AController) controller;
 	}
 
 }
