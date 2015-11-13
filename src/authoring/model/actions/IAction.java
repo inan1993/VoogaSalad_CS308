@@ -1,9 +1,7 @@
 package authoring.model.actions;
 
-import java.util.List;
+import authoring.model.bundles.Identifiable;
 
-import authoring.model.actors.IActor;
-
-public interface IAction {
+public interface IAction extends Identifiable {
 	public void run();
 }
