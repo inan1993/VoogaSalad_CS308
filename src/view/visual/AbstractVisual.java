@@ -2,6 +2,9 @@ package view.visual;
 
 import java.util.ResourceBundle;
 
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 
 public class AbstractVisual {

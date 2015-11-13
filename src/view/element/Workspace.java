@@ -6,15 +6,17 @@ import javafx.geometry.Side;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
-import view.screen.LevelMap;
+import view.screen.AbstractScreen;
 
 public class Workspace extends AbstractElement {
 	private TabPane manager;
 	private ArrayList<LevelMap> levels;
 	private LevelMap currentLevel;
+	private AbstractScreen screen;
 
-	public Workspace(GridPane pane) {
+	public Workspace(GridPane pane, AbstractScreen screen) {
 		super(pane);
+		this.screen = screen;
 		makePane();
 	}
 
@@ -36,7 +38,7 @@ public class Workspace extends AbstractElement {
 	}
 
 	public Tab addLevel() {
-		LevelMap newLevel = new LevelMap(new GridPane(), levels.size());
+		LevelMap newLevel = new LevelMap(new GridPane(), levels.size(), screen);
 		levels.add(newLevel);
 		Tab newLevelTab = newLevel.getTab();
 		int newID = Integer.parseInt(newLevelTab.getId());

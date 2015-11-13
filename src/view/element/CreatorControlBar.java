@@ -10,16 +10,14 @@ import javafx.scene.layout.VBox;
 import view.screen.AbstractScreen;
 import view.screen.StartScreen;
 
-public class ControlBarCreatorScene extends ControlBar {
+public class CreatorControlBar extends ControlBar {
 
 	private AbstractScreen currentScreen;
 	private Workspace workspace;
-	private double width;
-	
-	public ControlBarCreatorScene(GridPane pane, AbstractScreen screen, Workspace workspace, double width) {
+
+	public CreatorControlBar(GridPane pane, AbstractScreen screen, Workspace workspace) {
 		super(pane);
 		this.currentScreen = screen;
-		this.width = width;
 		this.workspace = workspace;
 		makePane();
 	}
@@ -27,7 +25,7 @@ public class ControlBarCreatorScene extends ControlBar {
 	@Override
 	protected void makePane() {
 		VBox box = new VBox();
-		box.setPrefWidth(width);
+		box.minWidthProperty().bind(currentScreen.getScene().widthProperty());
 		MenuBar mainMenu = new MenuBar();
 		makeMenuBar(mainMenu);
 		ToolBar toolBar = new ToolBar();
@@ -52,11 +50,11 @@ public class ControlBarCreatorScene extends ControlBar {
 
 		MenuItem properties = makeMenuItem("Properties", null);
 		Menu edit = makeMenu("Edit", properties);
-		
+
 		MenuItem toolbar = new MenuItem("Toolbar");
 		// https://docs.oracle.com/javafx/2/api/javafx/scene/control/CheckMenuItem.html
 		Menu window = makeMenu("Windows", toolbar);
-		
+
 		MenuItem doc = new MenuItem("Documentation");
 		Menu help = makeMenu("Help", doc);
 
