@@ -16,7 +16,6 @@ public class AbstractVisual {
 			Double.parseDouble(visualResources.getString("header")));
 	protected Font textFont = Font.loadFont(getClass().getClassLoader().getResourceAsStream("Ubuntu.ttf"),
 			Double.parseDouble(visualResources.getString("text")));
-	
 
 	protected void findResources() {
 		myResources = ResourceBundle
