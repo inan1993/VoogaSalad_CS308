@@ -2,12 +2,12 @@ package view.screen;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import view.element.ControlBar;
+import view.element.ControlBarCreatorScene;
 import view.element.Workspace;
 
 public class CreatorScreen extends AbstractScreen {
 
-	private ControlBar t;
+	private ControlBarCreatorScene t;
 	private Workspace w;
 	
 
@@ -33,7 +33,7 @@ public class CreatorScreen extends AbstractScreen {
 		BorderPane r = new BorderPane();
 		makePanes(2);
 		w = new Workspace(myPanes.get(1));
-		t = new ControlBar(myPanes.get(0), this, w, WIDTH);
+		t = new ControlBarCreatorScene(myPanes.get(0), this, w, WIDTH);
 		r.setTop(myPanes.get(0));
 		r.setCenter(myPanes.get(1));
 		root = r;
