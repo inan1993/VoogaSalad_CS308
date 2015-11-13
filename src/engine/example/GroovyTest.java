@@ -1,11 +1,16 @@
 package engine.example;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 public class GroovyTest {
 	public static void main (String[] args) throws Exception {
+		
         // setup groovy and make it aware of Java objects
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("groovy");
