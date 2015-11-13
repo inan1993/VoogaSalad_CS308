@@ -2,6 +2,7 @@ package engine;
 
 import java.util.List;
 
+import authoring.ALevel;
 import authoring.ILevel;
 import data.model.GameData;
 import engine.runnable.RunnableGame;
@@ -11,12 +12,16 @@ public class GameEngine implements IEngine {
 
 	public RunnableGame runnableGame;
 	
+	public GameEngine () {
+		this(null);
+	}
+	
 	public GameEngine (GameData game) {
 		this.runnableGame = new RunnableGame(game);
 	}
 	
 	@Override
-	public boolean init(List<ILevel> levelList) {
+	public boolean init(List<ALevel> levelList) {
 		return false;
 	}
 

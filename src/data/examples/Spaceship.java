@@ -1,8 +1,11 @@
 package data.examples;
 
+import authoring.model.actions.IAction;
 import authoring.model.actors.IActor;
+import authoring.model.bundles.Bundle;
 import authoring.model.properties.IProperties;
-import authoring.model.triggers.selftriggers.ISelfTrigger;
+import authoring.model.properties.Property;
+import authoring.model.triggers.selftriggers.ASelfTrigger;
 import javafx.scene.paint.Color;
 
 public class Spaceship implements IActor {
@@ -24,13 +27,29 @@ public class Spaceship implements IActor {
 		myColor = color;
 	}
 	@Override
-	public void addProperty(IProperties property) {
+	public Bundle<Property<?>> getProperties() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
-	@Override
-	public void addSelfTrigger(ISelfTrigger trigger) {
-		// TODO Auto-generated method stub
-		
-	}
+	
+//	@Override
+//	public IProperties getProperties() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	@Override
+//	public ASelfTrigger getSelfTriggers() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	@Override
+//	public IAction getActions() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//	@Override
+//	public void addSelfTrigger(ASelfTrigger e1) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 }

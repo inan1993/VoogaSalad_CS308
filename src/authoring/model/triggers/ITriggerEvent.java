@@ -1,5 +1,9 @@
 package authoring.model.triggers;
 
-public interface ITriggerEvent {
-    
+import authoring.model.bundles.Identifiable;
+
+public interface ITriggerEvent extends Identifiable {
+	    
+	public abstract boolean condition();
+	
 }

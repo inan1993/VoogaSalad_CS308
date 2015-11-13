@@ -1,9 +1,8 @@
 package authoring.model.actors;
 
-import authoring.model.properties.IProperties;
-import authoring.model.triggers.selftriggers.ISelfTrigger;
+import authoring.model.bundles.Bundle;
+import authoring.model.properties.Property;
 
 public interface IActor {
-	public void addProperty(IProperties property);
-	public void addSelfTrigger(ISelfTrigger trigger);
+	public Bundle<Property<?>> getProperties();
 }

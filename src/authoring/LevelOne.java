@@ -3,7 +3,7 @@ package authoring;
 import authoring.model.actors.IActor;
 import authoring.model.triggers.ITriggerEvent;
 
-public class LevelOne implements ILevel, Runnable {
+public class LevelOne extends ALevel {
 
 	@Override
 	public void run() {
@@ -25,6 +25,12 @@ public class LevelOne implements ILevel, Runnable {
 	public boolean linkActorsWithTriggers(ITriggerEvent myEvent, IActor... actors) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public String getUniqueID() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
