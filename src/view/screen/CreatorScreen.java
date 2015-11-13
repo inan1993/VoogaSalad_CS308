@@ -19,7 +19,6 @@ public class CreatorScreen extends AbstractScreen {
 		root.prefHeightProperty().bind(scene.heightProperty());
 		root.prefWidthProperty().bind(scene.widthProperty());
 		this.title = myResources.getString("title");
-
 	}
 
 	@Override
