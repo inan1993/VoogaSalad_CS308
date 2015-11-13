@@ -1,6 +1,8 @@
 package authoring.model.properties;
 
-public class Property<T> {
+import authoring.model.bundles.Identifiable;
+
+public class Property<T> implements Identifiable {
 
 	T myValue;
 	String identifier;
@@ -15,7 +17,9 @@ public class Property<T> {
 	public void setValue(T value) {
 		myValue = value;
 	}
-	public String getStringIdentifier() {
+	
+	@Override
+	public String getUniqueID() {
 		return identifier;
 	}
 }
