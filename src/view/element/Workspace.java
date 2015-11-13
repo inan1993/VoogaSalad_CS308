@@ -6,15 +6,17 @@ import javafx.geometry.Side;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
-import view.screen.LevelMap;
+import view.screen.AbstractScreen;
 
 public class Workspace extends AbstractElement {
 	private TabPane manager;
 	private ArrayList<LevelMap> levels;
 	private LevelMap currentLevel;
+	private AbstractScreen screen;
 
-	public Workspace(GridPane pane) {
+	public Workspace(GridPane pane, AbstractScreen screen) {
 		super(pane);
+		this.screen = screen;
 		makePane();
 	}
 
@@ -25,14 +27,18 @@ public class Workspace extends AbstractElement {
 		manager.setSide(Side.TOP);
 		pane.add(manager, 0, 0);
 		manager.getSelectionModel().selectedItemProperty().addListener((ov, oldTab, newTab) -> {
-			currentLevel = levels.get(Integer.parseInt(newTab.getId()));
 			manager.maxWidthProperty().unbind();
-			manager.maxWidthProperty().bind(currentLevel.getMap().widthProperty());
+			try {
+				currentLevel = levels.get(Integer.parseInt(newTab.getId()));
+				manager.maxWidthProperty().bind(currentLevel.getMap().widthProperty());
+			} catch (NullPointerException e) {
+				currentLevel = null;
+			}
 		});
 	}
 
 	public Tab addLevel() {
-		LevelMap newLevel = new LevelMap(new GridPane(), levels.size());
+		LevelMap newLevel = new LevelMap(new GridPane(), levels.size(), screen);
 		levels.add(newLevel);
 		Tab newLevelTab = newLevel.getTab();
 		int newID = Integer.parseInt(newLevelTab.getId());
