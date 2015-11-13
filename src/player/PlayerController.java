@@ -2,6 +2,7 @@ package player;
 
 import java.util.List;
 
+import authoring.ALevel;
 import authoring.ILevel;
 import controller.AController;
 import data.IFileManager;
@@ -35,7 +36,7 @@ public class PlayerController extends AController implements IPlayer {
 	}
 	
 	private void initializeGame (GameData game) {
-		List<ILevel> levelList = game.getLevelData().getLevels();
+		List<ALevel> levelList = game.getLevelData().getLevels();
 		myEngine.init(levelList);
 	}
 

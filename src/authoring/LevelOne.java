@@ -3,7 +3,7 @@ package authoring;
 import authoring.model.actors.IActor;
 import authoring.model.triggers.ITriggerEvent;
 
-public class LevelOne extends AbstractLevel {
+public class LevelOne extends ALevel {
 
 	@Override
 	public void run() {

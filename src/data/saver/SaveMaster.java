@@ -3,7 +3,7 @@ package data.saver;
 import java.util.ArrayList;
 import java.util.List;
 
-import authoring.AbstractLevel;
+import authoring.ALevel;
 import authoring.ILevel;
 import authoring.LevelOne;
 import authoring.model.bundles.Bundle;
@@ -29,7 +29,7 @@ public class SaveMaster implements IFileManager{
 		ILevel level = new LevelOne();
 		level.addActor(s);
 //		List<LevelOne> levelList = new ArrayList<LevelOne>();
-		Bundle<AbstractLevel> levelBundle = null;
+		Bundle<ALevel> levelBundle = null;
 //		levelList.add(level);
 //		GameData game = new GameData(new StateData(), new LevelData(levelList));
 		GameData game = new GameData(new StateData(), new LevelData(null));

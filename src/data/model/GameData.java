@@ -2,7 +2,7 @@ package data.model;
 
 import java.util.List;
 
-import authoring.AbstractLevel;
+import authoring.ALevel;
 import authoring.model.bundles.Bundle;
 
 public class GameData {
@@ -21,7 +21,7 @@ public class GameData {
 	}
 	
 	public Bundle getRunnableLevels () {
-		List<AbstractLevel> myLevels = levelData.getLevels();
+		List<ALevel> myLevels = levelData.getLevels();
 		return null;
 	}
 }
