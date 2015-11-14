@@ -37,14 +37,15 @@ public abstract class AbstractDockElement extends AbstractElement {
 		Window window = screen.getScene().getWindow();
 		Rectangle2D windowBounds = new Rectangle2D(window.getX(), window.getY(), window.getWidth(), window.getHeight());
 		if (docked && !windowBounds.contains(mouseLoc)) {
-			launch(me.getScreenX(), me.getScreenY());
+			launch(me.getScreenX() - pane.widthProperty().doubleValue() / 2,
+					me.getScreenY() - title.heightProperty().doubleValue());
 		}
 		if (!docked) {
 			if (windowBounds.contains(mouseLoc)) {
 				dock();
 			} else {
-				stage.setX(me.getScreenX());
-				stage.setY(me.getScreenY());
+				stage.setX(me.getScreenX() - pane.widthProperty().doubleValue() / 2);
+				stage.setY(me.getScreenY() - title.heightProperty().doubleValue());
 			}
 		}
 	}

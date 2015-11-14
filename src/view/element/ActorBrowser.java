@@ -28,6 +28,8 @@ public class ActorBrowser extends AbstractDockElement {
 		pane.setAlignment(Pos.TOP_CENTER);
 		leftlist.prefHeightProperty().bind(screen.getScene().heightProperty());
 		rightlist.prefHeightProperty().bind(screen.getScene().heightProperty());
+		leftlist.setFocusTraversable(false);
+		rightlist.setFocusTraversable(false);
 	}
 
 }
