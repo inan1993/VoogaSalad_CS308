@@ -20,7 +20,8 @@ public abstract class AbstractScreen extends AbstractVisual implements AbstractS
 	protected AbstractScreen nextScreen = null;
 	protected ArrayList<GridPane> myPanes;
 	protected boolean resizable = false;
-
+	protected boolean fullscreen = false;
+	
 	abstract public void run();
 
 	abstract protected void makeScene();
@@ -83,4 +84,7 @@ public abstract class AbstractScreen extends AbstractVisual implements AbstractS
 		return resizable;
 	}
 
+	public boolean isMaximized() {
+		return fullscreen;
+	}
 }

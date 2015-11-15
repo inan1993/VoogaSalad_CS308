@@ -25,6 +25,7 @@ public class RootManager implements Observer {
 		stage.setScene(startScreen.getScene());
 		stage.show();
 		stage.setResizable(startScreen.isResizable());
+		stage.setMaximized(startScreen.isMaximized());
 	}
 
 	public void run() {
