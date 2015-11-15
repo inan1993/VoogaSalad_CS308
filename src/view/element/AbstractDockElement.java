@@ -1,11 +1,13 @@
 package view.element;
 
+import javafx.beans.property.BooleanProperty;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -18,6 +20,8 @@ public abstract class AbstractDockElement extends AbstractElement {
 	protected Label title;
 	protected CreatorScreen screen;
 	protected GridPane home;
+	protected BooleanProperty isShown;
+	protected CheckMenuItem viewMenu;
 
 	public AbstractDockElement(GridPane pane, GridPane home, String title, CreatorScreen screen) {
 		super(pane);
@@ -28,7 +32,19 @@ public abstract class AbstractDockElement extends AbstractElement {
 		this.title.setOnMouseDragged(me -> {
 			screen.getScene().setCursor(Cursor.CLOSED_HAND);
 		});
+		this.viewMenu = new CheckMenuItem(this.getClass().getName());
+		viewMenu.setSelected(true);
+		viewMenu.selectedProperty().addListener(e -> isSelected(viewMenu.isSelected()));
 		dock();
+	}
+
+	// TODO: display/don't display based on whether isSelected is true or false
+	private void isSelected(Boolean isSelected) {
+		if (isSelected) {
+			System.out.println("Is Selected");
+		} else {
+			System.out.println("Isn't Selected");
+		}
 	}
 
 	private void handleDrag(MouseEvent me, boolean docked) {
@@ -78,4 +94,8 @@ public abstract class AbstractDockElement extends AbstractElement {
 		labelPane.setAlignment(Pos.CENTER);
 		return labelPane;
 	}
+	
+	public CheckMenuItem getMenuItem() {
+		return viewMenu;
+	}	
 }

@@ -14,6 +14,7 @@ public class CreatorControlBar extends ControlBar {
 
 	private AbstractScreen currentScreen;
 	private Workspace workspace;
+	private Menu toolbar;
 
 	public CreatorControlBar(GridPane pane, AbstractScreen screen, Workspace workspace) {
 		super(pane);
@@ -27,7 +28,7 @@ public class CreatorControlBar extends ControlBar {
 		VBox box = new VBox();
 		box.minWidthProperty().bind(currentScreen.getScene().widthProperty());
 		MenuBar mainMenu = new MenuBar();
-		makeMenuBar(mainMenu);
+		createMenuBar(mainMenu);
 		ToolBar toolBar = new ToolBar();
 		makeTools(toolBar);
 		box.getChildren().add(mainMenu);
@@ -43,22 +44,27 @@ public class CreatorControlBar extends ControlBar {
 		toolBar.getItems().addAll(backButton, addButton);
 	}
 
-	private void makeMenuBar(MenuBar mainMenu) {
+	private void createMenuBar(MenuBar mainMenu) {
 		MenuItem load = makeMenuItem("Load Game", null);
 		MenuItem save = makeMenuItem("Save Game", null);
-		Menu file = makeMenu("File", load, save);
+		Menu file = addToMenu(new Menu("File"), load, save);
 
 		MenuItem properties = makeMenuItem("Properties", null);
-		Menu edit = makeMenu("Edit", properties);
+		Menu edit = addToMenu(new Menu("Edit"), properties);
 
-		MenuItem toolbar = new MenuItem("Toolbar");
-		// https://docs.oracle.com/javafx/2/api/javafx/scene/control/CheckMenuItem.html
-		Menu window = makeMenu("Windows", toolbar);
+//		CheckMenuItem actors = makeMenuItem("Actors List", null);
+		
+		toolbar = addToMenu(new Menu("Toolbar"));
+		Menu window = addToMenu(new Menu("Window"), toolbar);
 
 		MenuItem doc = new MenuItem("Documentation");
-		Menu help = makeMenu("Help", doc);
+		Menu help = addToMenu(new Menu("Help"), doc);
 
-		mainMenu.getMenus().addAll(file, edit, window, help);
+		makeMenuBar(mainMenu, file, edit, window, help);
 	}
 
+	// enables program to add abstract dock element to view toolbar
+	public void addToToolbar(MenuItem m) {
+		toolbar.getItems().add(m);
+	}
 }
