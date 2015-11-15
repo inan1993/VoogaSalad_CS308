@@ -24,7 +24,6 @@ public class CreatorScreen extends AbstractScreen {
 		WIDTH = Integer.parseInt(myResources.getString("width"));
 		HEIGHT = Integer.parseInt(myResources.getString("height"));
 		checkFullscreen = new CheckMenuItem("Full Screen");
-		checkFullscreen.setSelected(true);
 		checkFullscreen.selectedProperty().addListener(e -> maxOrMin(checkFullscreen.isSelected()));
 		
 		makeScene();

@@ -3,6 +3,7 @@ package controller;
 import java.util.Observable;
 import java.util.Observer;
 
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import view.screen.AbstractScreen;
 import view.screen.StartScreen;
@@ -25,7 +26,12 @@ public class RootManager implements Observer {
 		stage.setScene(startScreen.getScene());
 		stage.show();
 		stage.setResizable(startScreen.isResizable());
-		stage.setMaximized(startScreen.isMaximized());
+		stage.maximizedProperty().addListener(e -> maxOrMin(stage.getScene()));
+	}
+
+	private void maxOrMin(Scene scene) {
+		// TODO: will work only if we have some way to access the current screen on the stage &
+		// that screen's isMaximized() property.
 	}
 
 	public void run() {
